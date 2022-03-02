@@ -5,6 +5,7 @@
 #include <string>
 #include <iostream>
 
+
 void Node::addItem(Node *n) {//edit this to add a string instead of num
     std::string str;//input info
     int num;
@@ -30,6 +31,7 @@ void Node::addItem(Node *n) {//edit this to add a string instead of num
         std::cin >> num;
     }
 }
+
 int Node::listLength(Node *n) {
     int counter = 0; //initialize counter
     current = head; //start counting from the beginning of the list
@@ -44,7 +46,7 @@ int Node::listLength(Node *n) {
 void Node::printList(Node *n){
     current = head;
     while(current != nullptr){
-        std::cout << current->info << " ";
+        std::cout << current->info << " \n";
         current = current->link;
     }
 }
@@ -58,11 +60,11 @@ void Node::isEmpty(Node *n){
     }
 }
 
-void Node::search(Node *n, int item){//come back and add multi instances
+void Node::search(Node *n, std::string item){//come back and add multi instances
     int counter=0; //keep track of index
     current = head;
     while(current != nullptr){
-        if(current->info == item){ //edit for string
+        if(current->info == item){ 
             std::cout<<"Item is at index "<<counter<<std::endl; //return index of item
         }else{
             counter++; //increment counter if not in list
@@ -102,7 +104,7 @@ void Node::retrieve(Node *n){
     }
 }
 
-void Node::deleteItem(Node *n, int item){ //edit for string
+void Node::deleteItem(Node *n, std::string item){ 
     //save head in temporary ptr
     current = head;
 
@@ -131,4 +133,3 @@ void Node::destroyList(Node *n){
     }
     head = nullptr;//set head to null after list is emptied
 }
-
