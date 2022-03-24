@@ -9,7 +9,9 @@
 void Node::addItem(Node *n) {//edit this to add a string instead of num
     std::string str;//input info
     int num;
-    std::cout << "Record your entry (press enter then -1 to stop): ";
+    std::cout << "Record your entry: ";
+    std::cin >> str;
+    std::cout << "Enter -1 to stop, or 1 to continue: ";
     std::cin >> num;
     while(num != -1){
 
@@ -27,7 +29,9 @@ void Node::addItem(Node *n) {//edit this to add a string instead of num
             current->link = newNode;
         }
 
-        std::cout << "Record your entry (press enter then -1 to stop): ";
+        std::cout << "Record your entry: ";
+        std::cin >> str;
+        std::cout << "Enter -1 to stop, or 1 to continue: ";
         std::cin >> num;
     }
 }
