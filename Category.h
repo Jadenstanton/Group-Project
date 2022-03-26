@@ -10,17 +10,15 @@ class Category: public Node {
 public:
     void addEntry();
     //Function for adding entry
-    void deleteEntry();
+    void deleteEntry(std::string key);
     //Function for deleting entry
     void editEntry();
     //function for editing entry
-    void searchEntry();
+    void searchEntry(std::string key);
     //function for searching entry
     void viewAllEntries();
     //function for viewing all entries in category
-
-
+    Category() =default;
 };
-
 
 #endif //DIVERSITYEQUITYINLCUSION_CATEGORY_H
