@@ -19,7 +19,7 @@ public:
     //function for displaying info
     void isEmpty(Node *n);
     //function for checking whether section is empty or not
-    void search(Node *n, int item);
+    void search(Node *n, std::string item);
     //function for searching for specific category
     //this might be irrelevant
     void retrieveFirst(Node *n);
@@ -29,7 +29,7 @@ public:
     void retrieve(Node *n);
     //function for retrieving specific entry
     //may be irrelevant
-    void deleteItem(Node *n, int item);
+    void deleteItem(Node *n, std::string item);
     //function for deleting entry
     //needs to be verified
     void destroyList(Node *n);
@@ -42,14 +42,14 @@ public:
     }
 
     // Parameter Constructor
-    Node(int data){
-        this->info = data;
+explicit Node(int data){
+        this->info = std::move(data);
         this->link = nullptr;
     }
 
 private:
     std::string info;
-    Node* link;
+    Node* link{};
     Node *tmp = nullptr;
     Node *head = nullptr;
     Node *head2 = nullptr;
