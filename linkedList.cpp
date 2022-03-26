@@ -8,7 +8,9 @@
 void Node::addItem(Node *n) {//edit this to add a string instead of num
     std::string str;//input info
     int num;
-    std::cout << "Record your entry (press enter then -1 to stop): ";
+    std::cout << "Record your entry: ";
+    std::cin >> str;
+    std::cout << "Enter -1 to stop, or 1 to continue: ";
     std::cin >> num;
     while(num != -1){
 
@@ -26,7 +28,9 @@ void Node::addItem(Node *n) {//edit this to add a string instead of num
             current->link = newNode;
         }
 
-        std::cout << "Record your entry (press enter then -1 to stop): ";
+        std::cout << "Record your entry: ";
+        std::cin >> str;
+        std::cout << "Enter -1 to stop, or 1 to continue: \n";
         std::cin >> num;
     }
 }
@@ -58,7 +62,7 @@ void Node::isEmpty(Node *n){
     }
 }
 
-void Node::search(Node *n, int item){//come back and add multi instances
+void Node::search(Node *n, std::string item){//come back and add multi instances
     int counter=0; //keep track of index
     current = head;
     while(current != nullptr){
@@ -102,7 +106,7 @@ void Node::retrieve(Node *n){
     }
 }
 
-void Node::deleteItem(Node *n, int item){ //edit for string
+void Node::deleteItem(Node *n, std::string item){ //edit for string
     //save head in temporary ptr
     current = head;
 
