@@ -12,15 +12,14 @@ void Category::addEntry() {
 
 void Category::editEntry() {};
 
-void Category::deleteEntry(int key) {
+void Category::deleteEntry(std::string key) {
     Node::deleteItem(head, key);
 };
 
-void Category::searchEntry(int key) {
+void Category::searchEntry(std::string key) {
     Node::search(head, key);
 };
 
 void Category::viewAllEntries() {
     Node::printList(head);
 };
-
