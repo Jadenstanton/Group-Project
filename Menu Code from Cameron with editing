@@ -1,0 +1,52 @@
+// Group Project.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+#include <string>
+using namespace std;
+//edit totals to be to individual operations
+
+int main()
+{
+    cout << "Enter your nationality:";
+    string nationality;
+    cin >> nationality;
+    cout << "Enter the number of the nationality around your area:";
+    float num;
+    cin >> num;
+    cout << "Enter the total marks:";
+    float total;
+    cin >> total;
+    float result;
+    result = (num / total) * 100;
+    cout << "Your are one in a percentage of :" << result << cout <<"" endl;
+    cout << "Enter your age:";
+    string age;
+    cin >> age;
+    cout << "Enter the number of your age that surronding your area:";
+    float num;
+    cin >> num;
+    cout << "Enter the total marks:";
+    float total;
+    cin >> total;
+    float result;
+    result = (num / total) * 100;
+    cout << "Your result is :" << result;
+    cout << "Enter your gender:";
+    string gender;
+    cin >> gender;
+    cout << "Enter the number of your gender around your area:";
+    float num;
+    cin >> num;
+    cout << "Enter the total marks:";
+    float total;
+    cin >> total;
+    float result;
+    result = (num / total) * 100;
+    cout << "Your result is :" << result;
+    system("pause");
+
+// Enter Code for each diversity category:
+
+//Race, Gender, Disability, Sexuality, etc. 
+    return 0;
