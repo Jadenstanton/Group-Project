@@ -1,0 +1,52 @@
+//This is using queue code to implement the 
+//Queue would have to be per input
+//Would need to find a way to run the code in the sense that it works per input
+//Still need to find a way fro storage
+#include <iostream>
+#include <queue>
+using namespace std;
+
+int main() {
+    // 1. Initialize a queue.
+    //INITIALIZE
+    queue<int> q;
+    
+    // 2. Push new element.
+    // Introducing the numbers for the animals
+    //ENQUEUE
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
+    q.push(5);
+    q.push(6);
+    q.push(7);
+    q.push(8);
+    
+    //Menu
+    //Implement the code that Cameron weems had for it 
+    
+    
+    //Select a field
+    
+    cout<< "Begin your selection process of the area of diversity that you are interested in:"<< endl;
+    
+    // 3. Check if queue is empty.
+    if (q.empty()) {
+        cout << "Forum empty! Prompt the discussion!" << endl;
+        return 0;
+    }
+    
+    // Selection process
+    int select;
+    // 4. Pop an element.
+    //DEQUEUE
+    
+    //prints what is left in the queue
+   // while(!q.empty()){
+		//cout<<" "<<q.front();
+	//	q.pop();
+		
+    }
+    
+}
