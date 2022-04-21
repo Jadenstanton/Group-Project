@@ -4,7 +4,7 @@
 Diversity, equity, and inclusion are significant problems in this world. With 8 billion people, each being unique, there is bound to be conflict due to misunderstanding and miseducation of one another. Our application assists others in not feeling like outsiders but instead included as part of a community, no matter how small.
 
 ## Details
-The application is based around informing eachother, so the main functionalities are an inclusive forumn to share experiences, beliefs, principles, and 
+The application is based around informing eachother, so the main functionalities are an inclusive forum to share experiences, beliefs, principles, and 
 identities as well as easy to digest statistics to inform one another.
 
 ## How to Use
