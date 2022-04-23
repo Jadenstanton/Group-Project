@@ -2,129 +2,266 @@
 #include "Category.h"
 #include "linkedList.h"
 #include "Queue.h"
+#include <fstream>
+//#include <vector>
+#include <sstream>
+
 
 int main() {
-
+    Category Race;
+    Category Religion;
+    Category Gender;
     Queue raceQueue;
     Queue religionQueue;
     Queue genderQueue;
     int choice = 0;
-
-    while(choice != -1) {
-        std::cout << "\nWhich category would you like presented? ";
-        std::cout << "\nEnter 1 for Race";
-        std::cout << "\nEnter 2 for Religion";
-        std::cout << "\nEnter 3 for Gender";
+    int choice2 = 0;
+    int mainChoice = 0;//variable for main loop
+    while (mainChoice != -1) {
+        mainChoice = 0;//reinit
+        std::cout << "\nEnter 1 for forum";
+        std::cout << "\nEnter 2 for statistics";
         std::cout << "\nEnter -1 to quit";
-        std::cout << "\nChoice: ";
-        std::cin >> choice;
+        std::cout << "\nChoice:";
+        std::cin >> mainChoice;
 
-        int choice2=0;//decclare variable inside to reset it each loop
+        if (mainChoice == 1) {//main program loop
+            choice = 0;//reinit
 
-        if (choice == 1) {
-            while (choice2 != -1) {
-                std::cout << "\nEnter 1 to add an entry\n";
-                std::cout << "Enter 2 to view all entries\n";
-                std::cout << "Enter 3 to check if forum is empty\n";
-                std::cout << "Enter -1 to exit to main menu\n";
-                std::cout << "Choice: ";
-                std::cin >> choice2;
+            while (choice != -1) {//loop for forum
+                std::cout << "\nWhich category would you like presented? ";
+                std::cout << "\nEnter 1 for Race";
+                std::cout << "\nEnter 2 for Religion";
+                std::cout << "\nEnter 3 for Gender";
+                std::cout << "\nEnter -1 to exit to main menu";
+                std::cout << "\nChoice: ";
+                std::cin >> choice;
 
-                switch (choice2) {
-                    case 1: {
-                        std::string str;//user input
-                        int num = 0; //flag for while loop
+                choice2 = 0;//decclare variable inside to reset it each loop
 
-                        while (num != -1) {
-                            raceQueue.queuePush();
+                if (choice == 1) {
+                    while (choice2 != -1) {
+                        std::cout << "\nEnter 1 to add an entry\n";
+                        std::cout << "Enter 2 to view all entries\n";
+                        std::cout << "Enter 3 to check if forum is empty\n";
+                        std::cout << "Enter -1 to exit to menu\n";
+                        std::cout << "Choice: ";
+                        std::cin >> choice2;
 
-                            std::cout << "Enter -1 to stop: ";
-                            std::cin >> num;
+                        switch (choice2) {
+                            case 1: {
+                                std::string str;//user input
+                                int num = 0; //flag for while loop
+
+                                while (num != -1) {
+                                    raceQueue.queuePush();
+
+                                    std::cout << "Enter -1 to stop: ";
+                                    std::cin >> num;
+                                }
+                                break;
+                            }
+                            case 2:
+                                std::cout << "\nThese are the entries:\n";
+                                raceQueue.queuePrint();
+                                std::cout << "\n";
+                                break;
+                            case 3: {
+                                raceQueue.isEmpty();
+                                break;
+                            }
+                            default:;
                         }
-                        break;
                     }
-                    case 2:
-                        std::cout << "\nThese are the entries:\n";
-                        raceQueue.queuePrint();
-                        std::cout << "\n";
-                        break;
-                    case 3: {
-                        raceQueue.isEmpty();
-                        break;
+
+                } else if (choice == 2) {
+                    while (choice2 != -1) {
+                        std::cout << "\nEnter 1 to add an entry\n";
+                        std::cout << "Enter 2 to view all entries\n";
+                        std::cout << "Enter 3 to check if forum is empty\n";
+                        std::cout << "Enter -1 to exit to menu\n";
+                        std::cout << "Choice: ";
+                        std::cin >> choice2;
+
+                        switch (choice2) {
+                            case 1: {
+                                std::string str;//user input
+                                int num = 0; //flag for while loop
+
+                                while (num != -1) {
+                                    religionQueue.queuePush();
+
+                                    std::cout << "Enter -1 to stop: ";
+                                    std::cin >> num;
+                                }
+                                break;
+                            }
+                            case 2:
+                                std::cout << "\nThese are the entries:\n";
+                                religionQueue.queuePrint();
+                                std::cout << "\n";
+                                break;
+                            case 3: {
+                                religionQueue.isEmpty();
+                                break;
+                            }
+                            default:;
+                        }
                     }
-                    default:;
+                } else if (choice == 2) {
+                    while (choice2 != -1) {
+                        std::cout << "\nEnter 1 to add an entry\n";
+                        std::cout << "Enter 2 to view all entries\n";
+                        std::cout << "Enter 3 to check if forum is empty\n";
+                        std::cout << "Enter -1 to exit to menu\n";
+                        std::cout << "Choice: ";
+                        std::cin >> choice2;
+
+                        switch (choice2) {
+                            case 1: {
+                                std::string str;//user input
+                                int num = 0; //flag for while loop
+
+                                while (num != -1) {
+                                    genderQueue.queuePush();
+
+                                    std::cout << "Enter -1 to stop: ";
+                                    std::cin >> num;
+                                }
+                                break;
+                            }
+                            case 2:
+                                std::cout << "\nThese are the entries:\n";
+                                genderQueue.queuePrint();
+                                std::cout << "\n";
+                                break;
+                            case 3: {
+                                genderQueue.isEmpty();
+                                break;
+                            }
+                            default:;
+                        }
+                    }
                 }
             }
+        } else if (mainChoice == 2) {
+            choice = 0;
+            while (choice != -1) {//loop for forum
+                std::cout << "\nWhich category would you like presented? ";
+                std::cout << "\nEnter 1 for Race stats";
+                std::cout << "\nEnter 2 for Religion stats";
+                std::cout << "\nEnter 3 for Gender stats";
+                std::cout << "\nEnter -1 to exit to main menu";
+                std::cout << "\nChoice: ";
+                std::cin >> choice;
 
-        } else if (choice == 2) {
-            while (choice2 != -1) {
-                std::cout << "\nEnter 1 to add an entry\n";
-                std::cout << "Enter 2 to view all entries\n";
-                std::cout << "Enter 3 to check if forum is empty\n";
-                std::cout << "Enter -1 to exit to main menu\n";
-                std::cout << "Choice: ";
-                std::cin >> choice2;
+                choice2 = 0;//decclare variable inside to reset it each loop
 
-                switch (choice2) {
-                    case 1: {
-                        std::string str;//user input
-                        int num = 0; //flag for while loop
+                if (choice == 1) {
+                    while (choice2 != -1) {
+                        std::cout << "\nEnter 1 display all stats\n";
+                        std::cout << "Enter 2 to sort entries from H to L\n";
+                        std::cout << "Enter 3 to sort entries from L to H\n";
+                        std::cout << "Enter 4 to sort entries alphabetically\n";
+                        std::cout << "Enter 5 to check if stats are empty\n";
+                        std::cout << "Enter -1 to exit to menu\n";
+                        std::cout << "Choice: ";
+                        std::cin >> choice2;
 
-                        while (num != -1) {
-                            religionQueue.queuePush();
-
-                            std::cout << "Enter -1 to stop: ";
-                            std::cin >> num;
+                        switch (choice2) {
+                            case 1: {
+                                std::cout << "\nThese are the entries:\n";
+                                Race.viewAll();
+                                std::cout << "\n";
+                                break;
+                            }
+                            case 2:
+                                //for sort H to L
+                                break;
+                            case 3:
+                                //for sort L to H
+                                break;
+                            case 4:
+                                //for sorting location alphabetically
+                                break;
+                            case 5: {
+                                Race.isEmpty();
+                                break;
+                            }
+                            default:;
                         }
-                        break;
                     }
-                    case 2:
-                        std::cout << "\nThese are the entries:\n";
-                        religionQueue.queuePrint();
-                        std::cout << "\n";
-                        break;
-                    case 3: {
-                        religionQueue.isEmpty();
-                        break;
-                    }
-                    default:;
-                }
-            }
-        } else if (choice == 2) {
-            while (choice2 != -1) {
-                std::cout << "\nEnter 1 to add an entry\n";
-                std::cout << "Enter 2 to view all entries\n";
-                std::cout << "Enter 3 to check if forum is empty\n";
-                std::cout << "Enter -1 to exit to main menu\n";
-                std::cout << "Choice: ";
-                std::cin >> choice2;
 
-                switch (choice2) {
-                    case 1: {
-                        std::string str;//user input
-                        int num = 0; //flag for while loop
+                } else if (choice == 2) {
+                    while (choice2 != -1) {
+                        std::cout << "\nEnter 1 display all stats\n";
+                        std::cout << "Enter 2 to sort entries from H to L\n";
+                        std::cout << "Enter 3 to sort entries from L to H\n";
+                        std::cout << "Enter 4 to sort entries alphabetically\n";
+                        std::cout << "Enter 5 to check if stats are empty\n";
+                        std::cout << "Enter -1 to exit to menu\n";
+                        std::cout << "Choice: ";
+                        std::cin >> choice2;
 
-                        while (num != -1) {
-                            genderQueue.queuePush();
-
-                            std::cout << "Enter -1 to stop: ";
-                            std::cin >> num;
+                        switch (choice2) {
+                            case 1: {
+                                std::cout << "\nThese are the entries:\n";
+                                Religion.viewAll();
+                                std::cout << "\n";
+                                break;
+                            }
+                            case 2:
+                                //for sort H to L
+                                break;
+                            case 3:
+                                //for sort L to H
+                                break;
+                            case 4:
+                                //for sort location alphabetically
+                                break;
+                            case 5: {
+                                Religion.isEmpty();
+                                break;
+                            }
+                            default:;
                         }
-                        break;
                     }
-                    case 2:
-                        std::cout << "\nThese are the entries:\n";
-                        genderQueue.queuePrint();
-                        std::cout << "\n";
-                        break;
-                    case 3: {
-                        genderQueue.isEmpty();
-                        break;
+                } else if (choice == 3) {
+                    while (choice2 != -1) {
+                        std::cout << "\nEnter 1 display all stats\n";
+                        std::cout << "Enter 2 to sort entries from H to L\n";
+                        std::cout << "Enter 3 to sort entries from L to H\n";
+                        std::cout << "Enter 4 to sort entries alphabetically\n";
+                        std::cout << "Enter 5 to check if stats are empty\n";
+                        std::cout << "Enter -1 to exit to menu\n";
+                        std::cout << "Choice: ";
+                        std::cin >> choice2;
+
+                        switch (choice2) {
+                            case 1: {
+                                std::cout << "\nThese are the entries:\n";
+                                Gender.viewAll();
+                                std::cout << "\n";
+                                break;
+                            }
+                            case 2:
+                                //for sort high to low
+                                break;
+                            case 3:
+                                //for sort low to high
+                                break;
+                            case 4:
+                                //for sort location alphabetically
+                            case 5: {
+                                Gender.isEmpty();
+                                break;
+                            }
+                            default:;
+                        }
                     }
-                    default:;
                 }
             }
         }
     }
     return 0;
-};
+}
