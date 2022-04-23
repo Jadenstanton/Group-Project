@@ -6,6 +6,41 @@
 //#include <vector>
 #include <sstream>
 
+void percentCalc(){
+    float num;
+    float total;
+    float result;
+
+    std::string nationality;
+    std::cout << "Enter your nationality:";
+    std::cin >> nationality;
+    std::cout << "Enter the number of the nationality around your area:";
+    std::cin >> num;
+    std::cout << "Enter the total marks:";
+    std::cin >> total;
+    result = (num / total) * 100;
+    std::cout << "Your are one in a percentage of :%" << result <<" "<<std::endl;
+
+    std::cout << "Enter your age:";
+    std::string age;
+    std::cin >> age;
+    std::cout << "Enter the number of your age that surrounding your area:";
+    std::cin >> num;
+    std::cout << "Enter the total marks:";
+    std::cin >> total;
+    result = (num / total) * 100;
+    std::cout << "Your result is : %" << result << std::endl;
+
+    std::cout << "Enter your gender:";
+    std::string gender;
+    std::cin >> gender;
+    std::cout << "Enter the number of your gender around your area:";
+    std::cin >> num;
+    std::cout << "Enter the total marks:";
+    std::cin >> total;
+    result = (num / total) * 100;
+    std::cout << "Your result is: % " << result << std::endl;
+};
 
 int main() {
     Category Race;
@@ -164,6 +199,7 @@ int main() {
                         std::cout << "Enter 3 to sort entries from L to H\n";
                         std::cout << "Enter 4 to sort entries alphabetically\n";
                         std::cout << "Enter 5 to check if stats are empty\n";
+                        std::cout << "Enter 6 to calculate your local statistics\n";
                         std::cout << "Enter -1 to exit to menu\n";
                         std::cout << "Choice: ";
                         std::cin >> choice2;
@@ -188,6 +224,9 @@ int main() {
                                 Race.isEmpty();
                                 break;
                             }
+                            case 6:{
+                                percentCalc();
+                            }
                             default:;
                         }
                     }
@@ -199,6 +238,7 @@ int main() {
                         std::cout << "Enter 3 to sort entries from L to H\n";
                         std::cout << "Enter 4 to sort entries alphabetically\n";
                         std::cout << "Enter 5 to check if stats are empty\n";
+                        std::cout << "Enter 6 to calculate your local statistics\n";
                         std::cout << "Enter -1 to exit to menu\n";
                         std::cout << "Choice: ";
                         std::cin >> choice2;
@@ -223,6 +263,9 @@ int main() {
                                 Religion.isEmpty();
                                 break;
                             }
+                            case 6:
+                                percentCalc();
+                                break;
                             default:;
                         }
                     }
@@ -233,6 +276,7 @@ int main() {
                         std::cout << "Enter 3 to sort entries from L to H\n";
                         std::cout << "Enter 4 to sort entries alphabetically\n";
                         std::cout << "Enter 5 to check if stats are empty\n";
+                        std::cout << "Enter 6 to calculate your local statistics\n";
                         std::cout << "Enter -1 to exit to menu\n";
                         std::cout << "Choice: ";
                         std::cin >> choice2;
@@ -256,6 +300,9 @@ int main() {
                                 Gender.isEmpty();
                                 break;
                             }
+                            case 6:
+                                percentCalc();
+                                break;
                             default:;
                         }
                     }
@@ -265,3 +312,4 @@ int main() {
     }
     return 0;
 }
+
