@@ -14,7 +14,7 @@ Make your choice and follow onscreen directions.
 
 ## The Team
 [**Jaden Stanton**](https://github.com/Jadenstanton) |
-[**Ka'pri Burden**](https://github.com/kburd02) |
+[**Ka'Pri Burden**](https://github.com/kburd02) |
 [**Cameron Weems**](https://github.com/SpamCamCam)
 
 ## Tools Used
