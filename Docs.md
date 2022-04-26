@@ -29,3 +29,4 @@ Compile and run.
 Follow the onscreen instructions.
 
 ## Contributions
+*Jaden Stanton* - Main program, classes, and merge sort.
