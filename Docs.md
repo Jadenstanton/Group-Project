@@ -30,3 +30,5 @@ Follow the onscreen instructions.
 
 ## Contributions
 *Jaden Stanton* - Main program, classes, and merge sort.
+*Ka'Pri Burden* - Queue for forum.
+*Cameron Weems* - Statistic percent calculation.
