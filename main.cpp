@@ -6,7 +6,7 @@
 //#include <vector>
 #include <sstream>
 
-void percentCalc(){
+void percentCalc(){ /* By Cameron Weems*/
     float num;
     float total;
     float result;
@@ -42,7 +42,7 @@ void percentCalc(){
     std::cout << "Your result is: % " << result << std::endl;
 };
 
-int main() {
+int main() { /* By Jaden Stanton*/
     Category Race;
     Category Religion;
     Category Gender;
