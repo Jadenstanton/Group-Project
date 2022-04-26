@@ -7,7 +7,8 @@
 void Queue::queuePush() {
     std::string str;//input info
     std::cout << "Record your entry: ";
-    std::cin >> str;
+    std::cin.ignore();//delete new line buffer
+    std::getline(std::cin, str);//use getline to store multiple words into 'str' instead of one
     q.push(str);
 }
 
