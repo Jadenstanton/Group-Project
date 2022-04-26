@@ -1,7 +1,7 @@
 //
 // Created by Jaden Stanton on 4/19/22.
 //
-// Ka'Pri Burden
+/* By Ka'Pri Burden*/
 #ifndef DIVERSITYEQUITYINLCUSION_QUEUE_H
 #define DIVERSITYEQUITYINLCUSION_QUEUE_H
 #include <queue>
