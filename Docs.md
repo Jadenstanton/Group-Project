@@ -1,6 +1,9 @@
 # Documentation
 
 ## Design
+The design of the program is a menu system that allows you to access a forum or statistics.
+
+The program was abstracted into classes to make for a cleaner and more simplistic user program.
 
 ## Data Structures
 ### Queue
@@ -12,7 +15,17 @@ The linked list was used for statistics of the application. It allowed us to be 
 ## Data Set
 
 ## Algo Performance
+### Merge Sort
+The merge sort algorithm runs at O(nlogn)
 
 ## How To
+*Step 1* - 
+Download all project files.
+
+*Step 2* - 
+Compile and run.
+
+*Step 3* - 
+Follow the onscreen instructions.
 
 ## Contributions
