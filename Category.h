@@ -1,24 +1,24 @@
 //
-// Created by Jaden Stanton on 2/25/22.
+// Created by Jaden Stanton on 4/19/22.
 //
+// Queue class - Ka'Pri Burden
+#ifndef DIVERSITYEQUITYINLCUSION_QUEUE_H
+#define DIVERSITYEQUITYINLCUSION_QUEUE_H
+#include <queue>
 
-#ifndef DIVERSITYEQUITYINLCUSION_CATEGORY_H
-#define DIVERSITYEQUITYINLCUSION_CATEGORY_H
-#include "linkedList.h"
-
-class Category: public Node {
+class Queue {
 public:
-    void addEntry();
-    //Function for adding entry
-    void deleteEntry(std::string key);
-    //Function for deleting entry
-    void editEntry();
-    //function for editing entry
-    void searchEntry(std::string key);
-    //function for searching entry
-    void viewAllEntries();
-    //function for viewing all entries in category
-    Category() =default;
+    void queuePush();
+    //function to push elements to queue
+    void isEmpty();
+    //function to check if queue is full or empty
+    void selection();
+    //function for selection
+    void queuePrint();
+    //function to print queue
+private:
+    std::queue<std::string> q;
 };
 
-#endif //DIVERSITYEQUITYINLCUSION_CATEGORY_H
+
+#endif //DIVERSITYEQUITYINLCUSION_QUEUE_H
