@@ -28,7 +28,7 @@ void Queue::queuePrint() {
     std::queue <std::string> q2; //temp queue to store original queue values
     q2 = q;
     while(!q2.empty()){
-        std::cout << q2.front() << std::endl;
+        std::cout << q2.front() << "\n\n";
         q2.pop();
     }
 }
