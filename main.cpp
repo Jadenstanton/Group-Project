@@ -215,7 +215,10 @@ int main() { /* By Jaden Stanton*/
                                 //for sort H to L
                                 break;
                             case 3:
-                                //for sort L to H
+                                //will sort data from high to low
+                                Religion.mergeSort(Religion.accessHead());
+                                std::cout << "Entries low to high: \n";
+                                Religion.viewAll();
                                 break;
                             case 4:
                                 //for sorting location alphabetically
@@ -254,7 +257,10 @@ int main() { /* By Jaden Stanton*/
                                 //for sort H to L
                                 break;
                             case 3:
-                                //for sort L to H
+                                //will sort data from high to low
+                                Religion.mergeSort(Religion.accessHead());
+                                std::cout << "Entries low to high: \n";
+                                Religion.viewAll();
                                 break;
                             case 4:
                                 //for sort location alphabetically
@@ -292,7 +298,10 @@ int main() { /* By Jaden Stanton*/
                                 //for sort high to low
                                 break;
                             case 3:
-                                //for sort low to high
+                                //will sort data from high to low
+                                Gender.mergeSort(Gender.accessHead());
+                                std::cout << "Entries low to high: \n";
+                                Gender.viewAll();
                                 break;
                             case 4:
                                 //for sort location alphabetically
@@ -312,4 +321,3 @@ int main() { /* By Jaden Stanton*/
     }
     return 0;
 }
-
