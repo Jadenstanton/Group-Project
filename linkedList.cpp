@@ -5,6 +5,7 @@
 #include <string>
 #include <iostream>
 
+
 void Node::addItem(Node *n) {//edit this to add a string instead of num
     std::string str;//input info
     int num;
@@ -34,6 +35,7 @@ void Node::addItem(Node *n) {//edit this to add a string instead of num
         std::cin >> num;
     }
 }
+
 int Node::listLength(Node *n) {
     int counter = 0; //initialize counter
     current = head; //start counting from the beginning of the list
@@ -48,7 +50,7 @@ int Node::listLength(Node *n) {
 void Node::printList(Node *n){
     current = head;
     while(current != nullptr){
-        std::cout << current->info << " ";
+        std::cout << current->info << "\t \n";
         current = current->link;
     }
 }
@@ -135,4 +137,70 @@ void Node::destroyList(Node *n){
     }
     head = nullptr;//set head to null after list is emptied
 }
+
+void Node::mergeSort(Node *n){
+    current = head;
+    Node *a;
+    Node *b;
+
+    //Base case, length 0 or 1
+    if ((head == nullptr) || (head->link == nullptr)) {
+        return;
+    }
+
+    //Split head into a and b sublists
+    halfSplit(head, &a, &b);
+
+    //Recursively sort the sublists
+    mergeSort(a);
+    mergeSort(b);
+
+    //answer = merge the two sorted lists together
+    n = sortedMerge(a, b);
+}
+
+Node* Node::sortedMerge(Node* a, Node* b){
+    Node *result = nullptr;
+
+    //Base cases
+    if (a == nullptr)
+        return (b);
+    else if (b == nullptr)
+        return (a);
+
+    // Pick a or b, and recur
+    if (a->info <= b->info) {
+        result = a;
+        result->link = sortedMerge(a->link, b);
+    }
+    else {
+        result = b;
+        result->link = sortedMerge(a, b->link);
+    }
+    return (result);
+}
+
+void Node::halfSplit(Node* source, Node** frontRef, Node** backRef){
+    Node* fast;
+    Node* slow;
+    slow = source;
+    fast = source->link;
+
+    //Advance fast nodes and slow node
+    while (fast != nullptr) {
+        fast = fast->link;
+        if (fast != nullptr) {
+            slow = slow->link;
+            fast = fast->link;
+        }
+    }
+
+    //slow node is before the midpoint in the list, so split it in two at that point
+    *frontRef = source;
+    *backRef = slow->link;
+    slow->link = nullptr;
+}
+
+
+
 
