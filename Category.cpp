@@ -5,18 +5,18 @@
 #include "Category.h"
 #include "linkedList.h"
 
-void Category::addEntry() {
-//    current = head;
-    Node::addItem(head);
-}
+//void Category::addEntry() {
+////    current = head;
+//    Node::addItem(head);
+//}
 
 void Category::editEntry() {}
 
-void Category::deleteEntry(std::string key) {
+void Category::deleteEntry(double key) {
     Node::deleteItem(head, key);
 }
 
-void Category::searchEntry(std::string key) {
+void Category::searchEntry(double key) {
     Node::search(head, key);
 }
 
