@@ -13,7 +13,12 @@ class Node {
 public:
     Node*  accessHead() const { return(head);}
     //accessor function for head
-    void addItem(Node *n);
+    void printAll(Node *n);
+    void append(Node listType, double percentage);
+    void insertAfter(Node *n, double percentage);
+    void push(Node *n, int new_data);
+    //function for pushing nodes
+    void addItem(Node *n, double percentage);
     //function for adding entries - Jaden Stanton
     int listLength(Node *n);
     //function for retrieving amount of entries - Jaden Stanton
@@ -21,7 +26,7 @@ public:
     //function for displaying info - Jaden Stanton
     void isEmpty(Node *n);
     //function for checking whether section is empty or not - Jaden Stanton
-    void search(Node *n, std::string item);
+    void search(Node *n, double item);
     //function for searching for specific category - Jaden Stanton
     //this might be irrelevant
     void retrieveFirst(Node *n);
@@ -31,7 +36,7 @@ public:
     void retrieve(Node *n);
     //function for retrieving specific entry - Jaden Stanton
     //may be irrelevant
-    void deleteItem(Node *n, std::string item);
+    void deleteItem(Node *n, double item);
     //function for deleting entry - Jaden Stanton
     //needs to be verified
     void destroyList(Node *n);
@@ -44,19 +49,20 @@ public:
     //function for mergeSort
 
 
+
     // Default constructor
 Node(){
-        info = "EMPTY";
+        info = -1;
         link = nullptr;
     }
 
     // Parameter Constructor
-explicit Node(std::string data){
+explicit Node(double data){
         this->info = std::move(data);
         this->link = nullptr;
     }
 protected:
-    std::string info;
+    double info;
     Node* link{};
     Node *tmp = nullptr;
     Node *head = nullptr;
