@@ -37,6 +37,9 @@ Compile and run.
 *Step 3* - 
 Follow the onscreen instructions.
 
+![image](https://raw.githubusercontent.com/Jadenstanton/Group-Project/main/Screenshots/Screen%20Shot%202022-04-27%20at%2012.45.52%20PM.png)
+![image](https://raw.githubusercontent.com/Jadenstanton/Group-Project/main/Screenshots/Screen%20Shot%202022-04-27%20at%2012.46.30%20PM.png)
+
 ## Contributions
 *Jaden Stanton* - Main program, classes, and merge sort.
 
