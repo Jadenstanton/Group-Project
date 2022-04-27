@@ -10,12 +10,12 @@ class Category: public Node {
 public:
     void addEntry();
     //Function for adding entry
-    void deleteEntry(std::string key);
+    void deleteEntry(double key);
     //Function for deleting entry
     //takes key for index to be searched for
     void editEntry();
     //function for editing entry
-    void searchEntry(std::string key);
+    void searchEntry(double key);
     //function for searching entry
     //takes key for index to be searched for
     void viewAll();
