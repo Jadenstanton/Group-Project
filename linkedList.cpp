@@ -6,17 +6,57 @@
 #include <iostream>
 
 
-void Node::addItem(Node *n) {//edit this to add a string instead of num
-    std::string str;//input info
-    int num;
-    std::cout << "Record your entry: ";
-    std::cin >> str;
-    std::cout << "Enter -1 to stop, or 1 to continue: ";
-    std::cin >> num;
-    while(num != -1){
+void Node::printAll(Node *n) {
+    current=head;
+    while(current!= nullptr){
+        std::cout << current->info <<"\n";
+        current=current->link;
+    }
+}
+void Node::append(Node listType, double percentage) {
+    current = head;
+    newNode = new Node;
+    Node* last = current;
+    newNode->info = percentage;
+    newNode->link = nullptr;
+
+    if(current == nullptr){
+        current = newNode;
+        return;
+    }
+    while(last->link != nullptr){
+        last = last->link;
+    }
+    last->link = newNode;
+    return;
+}
+void Node::insertAfter(Node *prev_node, double percentage){
+    newNode = new Node;
+    newNode->info = percentage;
+    newNode->link = prev_node->link;
+    prev_node->link = newNode;
+}
+
+void Node::push(Node *n, int new_data) {
+    newNode = new Node;
+    newNode -> info = new_data;
+    newNode ->link = nullptr;
+    (n) = newNode;
+
+//    if (head == nullptr){
+//        head = newNode;
+//    }else{
+//        current = head;
+//        while (current->link != nullptr){
+//            current = current->link;
+//        }
+//        current->link = newNode;
+//    }
+}
+void Node::addItem(Node *n, double percentage) {//edit this to add a string instead of num
 
         newNode = new Node;
-        newNode->info = str;
+        newNode->info = percentage;
         newNode->link = nullptr;
 
         if (head == nullptr){
@@ -27,13 +67,8 @@ void Node::addItem(Node *n) {//edit this to add a string instead of num
                 current = current->link;
             }
             current->link = newNode;
-        }
-
-        std::cout << "Record your entry: ";
-        std::cin >> str;
-        std::cout << "Enter -1 to stop, or 1 to continue: \n";
-        std::cin >> num;
     }
+
 }
 
 int Node::listLength(Node *n) {
@@ -47,12 +82,35 @@ int Node::listLength(Node *n) {
     return counter;
 }
 
-void Node::printList(Node *n){
+void Node::printList(Node *n) {
     current = head;
-    while(current != nullptr){
-        std::cout << current->info << "\t \n";
-        current = current->link;
-    }
+    while (current != nullptr) {
+        if (current->info == 76.3) {
+            std::cout << "For White alone: 76.3%" << std::endl;
+        } else if (current->info == 60.1) {
+            std::cout << "For White alone, not Hispanic or Latino: 60.1%" << std::endl;
+        } else if (current->info == 13.4) {
+            std::cout << "For Black or African American, alone: 13.4%\n";
+        } else if (current->info == 18.5) {
+            std::cout << "For Hispanic or Latino: 18.5%" << std::endl;
+        } else if (current->info == 2.8) {
+            std::cout << "For Two or More Races: 2.8%" << std::endl;
+        } else if (current->info == 1.3) {
+            std::cout << "For American Indian and Alaska Native: 1.3%\n";
+        } else if (current->info == 0.2) {
+            std::cout << "For Native Hawaiian and Other Pacific Islander alone: 0.2%\n";
+        }
+//          std::cout << "For White alone: 76.3%" << std::endl;
+//            std::cout << "For White alone, not Hispanic or Latino: 60.1%" << std::endl;
+//            std::cout << "For Black or African American, alone: 13.4%\n";
+//            std::cout << "For Hispanic or Latino" << std::endl;
+//            std::cout << "For Two or More Races" << std::endl;
+//            std::cout << "For American Indian and Alaska Native: 1.3%\n";
+//            std::cout << "For Native Hawaiian and Other Pacific Islander alone: 0.2%\n";
+//
+            current = current->link;
+
+    }//
 }
 
 void Node::isEmpty(Node *n){
@@ -64,7 +122,7 @@ void Node::isEmpty(Node *n){
     }
 }
 
-void Node::search(Node *n, std::string item){//come back and add multi instances
+void Node::search(Node *n, double item){//come back and add multi instances
     int counter=0; //keep track of index
     current = head;
     while(current != nullptr){
@@ -108,7 +166,7 @@ void Node::retrieve(Node *n){
     }
 }
 
-void Node::deleteItem(Node *n, std::string item){ //edit for string
+void Node::deleteItem(Node *n, double item){ //edit for string
     //save head in temporary ptr
     current = head;
 
@@ -200,7 +258,6 @@ void Node::halfSplit(Node* source, Node** frontRef, Node** backRef){
     *backRef = slow->link;
     slow->link = nullptr;
 }
-
 
 
 
