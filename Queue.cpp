@@ -1,5 +1,4 @@
 //
-// Created by Jaden Stanton on 4/19/22.
 //
 #include <iostream>
 #include "Queue.h"
